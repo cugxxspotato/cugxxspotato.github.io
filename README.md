@@ -9,7 +9,7 @@
 直接双击 `index.html` 即可，或者起一个本地服务器：
 
 ```bash
-python -m http.server 8080 --bind 127.0.0.1
+npx --yes serve . -l 8080
 ```
 
 然后打开 <http://127.0.0.1:8080/>。
@@ -45,7 +45,19 @@ python -m http.server 8080 --bind 127.0.0.1
 
 ## 部署
 
-推到 GitHub 后在仓库 **Settings → Pages** 里把 Source 设为 `Deploy from a branch`，分支选 `main`、目录选 `/ (root)`。
+本地仓库已初始化并完成首次提交，remote 已指向：
+
+```
+https://github.com/cugxxspotato/cugxxspotato.github.io.git
+```
+
+还差两步（详见 [填写指南.md](填写指南.md) 第四节）：
+
+1. 在 <https://github.com/new> 创建 **Public** 仓库，名字必须是 `cugxxspotato.github.io`；
+2. `git push -u origin main`，然后在 **Settings → Pages** 把 Source 设为
+   `Deploy from a branch`，分支 `main`、目录 `/ (root)`。
+
+网址将是 <https://cugxxspotato.github.io>。
 
 ## 说明
 
