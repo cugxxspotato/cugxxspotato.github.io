@@ -111,7 +111,13 @@
 			  </p>
             </td>
             <td style="padding:2.5%;width:40%;max-width:40%">
-              <img style="width:85%;max-width:85%;border-radius:8px;" alt="【你的照片：建议正方形，替换 images/template/avatar.svg】" src="images/template/avatar.svg">
+              <!-- 头像：把照片放进 images/avatar/ 并命名为 me.jpg 即可自动生效。
+                   aspect-ratio + object-fit 保证任何比例的照片都裁成正圆而不是椭圆。
+                   照片未就位时 onerror 会回退到 images/template/avatar.svg。 -->
+              <img style="width:85%;max-width:85%;aspect-ratio:1/1;object-fit:cover;border-radius:50%;box-shadow:0 4px 18px rgba(0,0,0,0.14);"
+                   alt="【你的照片：放在 images/avatar/me.jpg，正方形效果最好】"
+                   src="images/avatar/me.jpg"
+                   onerror="this.onerror=null;this.src='images/template/avatar.svg';">
             </td>
           </tr>
         </tbody></table>

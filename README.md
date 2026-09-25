@@ -22,7 +22,8 @@ npx --yes serve . -l 8080
 ├── stylesheet.css      # 样式
 ├── 填写指南.md          # 占位符填写 + 部署说明
 ├── images/
-│   ├── template/       # 头像、机构 logo
+│   ├── avatar/         # 你的头像放这里（命名 me.jpg 即自动生效）
+│   ├── template/       # 占位头像、机构 logo
 │   ├── paper/          # 论文配图
 │   ├── experience/     # 页脚背景图（多分辨率）
 │   └── icon/           # 鼠标指针、工具图标
