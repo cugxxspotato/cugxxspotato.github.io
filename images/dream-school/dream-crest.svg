@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="梦校校徽">
+  <title>梦校校徽</title>
+  <desc>自绘的通用院校徽记，不代表任何真实学校，也不含任何真实学校的注册商标元素。</desc>
+  <defs>
+    <linearGradient id="crestGold" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#f9c85a"/>
+      <stop offset="1" stop-color="#d98a12"/>
+    </linearGradient>
+  </defs>
+  <circle cx="32" cy="32" r="31" fill="url(#crestGold)"/>
+  <circle cx="32" cy="32" r="26.5" fill="none" stroke="#ffffff" stroke-width="1.3" opacity="0.92"/>
+  <circle cx="32" cy="32" r="23" fill="none" stroke="#ffffff" stroke-width="0.7" opacity="0.45"/>
+  <path d="M32 16.6l4 8.3 9.1 1.3-6.6 6.4 1.6 9.1L32 37.4l-8.1 4.3 1.6-9.1-6.6-6.4 9.1-1.3z" fill="#ffffff"/>
+</svg>
