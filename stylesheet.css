@@ -160,7 +160,10 @@ html {
 .section-drip-nav {
   position: fixed;
   top: 50%;
-  right: 377px;
+  /* 贴在正文栏右侧：正文 max-width 800px 居中，所以中点右侧 400px 就是正文右边缘，
+     再留 20px 间隙。用 left: calc(50% + …) 而不是写死的 right 值，
+     任何窗口宽度下都不会压到正文文字，也不会随宽度变化而漂移。 */
+  left: calc(50% + 420px);
   z-index: 50;
   display: flex;
   flex-direction: column;
@@ -993,4 +996,97 @@ span.highlight {
   .mountain-cta {
     animation: none;
   }
+
+  .wip-bar span {
+    animation: none;
+    width: 100%;
+    opacity: 0.5;
+  }
+}
+
+/* ============================================================
+   「建设中」占位卡片
+   用于论文 / 项目等暂时没有产出、但想体面地表达「正在推进」的地方。
+   配色沿用站点主色（#fba524 琥珀 / #f3d008 亮黄）。
+   ============================================================ */
+.wip-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 10px;
+  margin: 26px auto 10px;
+  padding: 34px 30px 30px;
+  max-width: 470px;
+  border: 1px dashed rgba(251, 165, 36, 0.5);
+  border-radius: 16px;
+  background:
+    radial-gradient(120% 100% at 50% 0%, rgba(251, 165, 36, 0.10), rgba(251, 165, 36, 0) 70%),
+    linear-gradient(180deg, #fffdf8, #fffaf1);
+  box-shadow: 0 2px 10px rgba(173, 112, 32, 0.06);
+}
+
+.wip-icon {
+  font-size: 34px;
+  line-height: 1;
+}
+
+.wip-title {
+  font-family: 'Lato', Verdana, Helvetica, sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  color: #6e3519;
+  letter-spacing: 0.2px;
+}
+
+.wip-text {
+  font-size: 13px;
+  line-height: 1.75;
+  color: #8a6a4f;
+  max-width: 370px;
+}
+
+.wip-text a {
+  color: #ad7020;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(173, 112, 32, 0.35);
+}
+
+.wip-text a:hover {
+  color: #6e3519;
+  border-bottom-color: #6e3519;
+}
+
+/* 不带百分比的「进行中」进度条：只表达在推进，不谎报进度 */
+.wip-bar {
+  width: 150px;
+  height: 5px;
+  margin-top: 6px;
+  border-radius: 999px;
+  background: rgba(251, 165, 36, 0.16);
+  overflow: hidden;
+}
+
+.wip-bar span {
+  display: block;
+  width: 42%;
+  height: 100%;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #f3d008, #fba524);
+  animation: wip-slide 2s cubic-bezier(0.45, 0, 0.55, 1) infinite;
+}
+
+@keyframes wip-slide {
+  0%   { transform: translateX(-115%); }
+  100% { transform: translateX(355%); }
+}
+
+/* 放进原本给 3D 标签云用的定高容器里时，居中显示 */
+#tagcloud-container > .wip-card {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin: 0;
+  width: min(460px, 88%);
 }

@@ -22,7 +22,6 @@
     <a href="#publications"><span>论文</span></a>
     <a href="#experience"><span>经历</span></a>
     <a href="#projects"><span>项目</span></a>
-    <a href="#service"><span>服务与教学</span></a>
     <a href="#awards"><span>荣誉</span></a>
   </nav>
   <table id="about" class="page-section" style="width:100%;max-width:800px;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
@@ -42,21 +41,14 @@
 			    style="height:1.05em; vertical-align:middle; margin-right:4px;"
 			  >
 			  <a href="https://cs.whu.edu.cn/">武汉大学计算机学院</a>的准博士研究生（Incoming Ph.D. Student），本科毕业于
+			  <img
+			    src="images/cug/cug-emblem-320.jpg"
+			    alt="中国地质大学（武汉）校徽"
+			    style="height:1.05em; vertical-align:middle; margin-right:4px;"
+			  >
 			  <a href="https://www.cug.edu.cn/">中国地质大学（武汉）</a>信息管理与信息系统专业。
 			</p>
-			<p>
-				我平时常用
-				<a href="https://github.com/anthropics/claude-code">
-				  <img src="images/icon/claudecode.png" alt="Claude Code icon" style="height:16px; vertical-align:middle;">
-				  Claude Code
-				</a>
-				和
-				<a href="https://github.com/openai/codex">
-				  <img src="images/icon/codex.png" alt="Codex icon" style="height:16px; vertical-align:middle;">
-				  CodeX
-				</a>
-				。我喜欢把想法做成简单、实用的系统，也愿意把过程中的收获分享出来。
-			</p>
+
 			<div style="width: 100%; height: 1px; background: linear-gradient(to right, transparent, #ccc 20%, #ccc 80%, transparent); margin: 10px 0;"></div>
 
               <p class="contact-links">
@@ -209,17 +201,9 @@
               transform: translate(-50%, -135%);
             }
           </style>
-          
-          <div class="tag-filter" id="tagFilter">
-            <button class="tag-btn active" data-tag="all">全部</button>
-	            <button class="tag-btn" data-tag="multimodal">多模态</button>
-	            <button class="tag-btn" data-tag="llm">大语言模型</button>
-	            <button class="tag-btn" data-tag="medical">医学影像</button>
-	            <button class="tag-btn" data-tag="embodied">具身智能</button>
-            <button class="tag-btn" data-tag="benchmark">基准测试</button>
-          </div>
-
-          <script>
+          <!-- 研究兴趣标签筛选暂时隐藏（目前还没有论文）。
+               有论文后把标签按钮加回来即可，.tag-filter 的 CSS 与 JS 逻辑都还在，会自动生效。 -->
+<script>
             // Inject counts into tag buttons (after full DOM is parsed)
             document.addEventListener('DOMContentLoaded', function() {
               const rows = document.querySelectorAll('tr[data-tags]');
@@ -231,8 +215,9 @@
               });
             });
 
-            // Tag filter
-            document.getElementById('tagFilter').addEventListener('click', function(e) {
+            // Tag filter（标签按钮目前已移除，做空值保护；按钮加回来即自动生效）
+            var tagFilterEl = document.getElementById('tagFilter');
+            if (tagFilterEl) tagFilterEl.addEventListener('click', function(e) {
               const btn = e.target.closest('.tag-btn');
               if (!btn) return;
               document.querySelectorAll('.tag-btn').forEach(b => b.classList.remove('active'));
@@ -291,93 +276,17 @@
             
           </script>
 
-	          <tr data-tags="multimodal,llm">
-	            <td style="padding:20px;width:30%;vertical-align:middle">
-	              <div class="one">
-	                <div class="two" id="pub1_image">
-	                  <br>
-	                  <img src="images/paper/rarelens.png" width="190" alt="【论文一配图】">
-	                </div>
-	                <br>
-	                <img src="images/paper/rarelens.png" width="190" alt="【论文一配图】">
+	          <tr>
+	            <td colspan="2" style="padding:8px 20px 26px;">
+	              <div class="wip-card">
+	                <div class="wip-icon">✍️</div>
+	                <div class="wip-title">第一篇论文正在编写中</div>
+	                <div class="wip-text">目前还没有正式发表的工作，正在认真打磨自己的第一篇论文。<br>有进展会第一时间更新在这里。</div>
+	                <div class="wip-bar"><span></span></div>
 	              </div>
-	              <script type="text/javascript">
-	                function pub1_start() {
-	                  document.getElementById('pub1_image').style.opacity = "1";
-	                }
-	                function pub1_stop() {
-	                  document.getElementById('pub1_image').style.opacity = "0";
-	                }
-	                pub1_stop()
-	              </script>
-	            </td>
-	            <td style="padding:20px;width:70%;vertical-align:middle">
-	              <a href="#">
-	                <papertitle>【论文标题一】</papertitle>
-	              </a>
-	              <br>
-	              <a:focus>【其他作者】</a:focus>,
-	              <a:focus><strong>【你的姓名】</strong></a:focus>,
-	              <a:focus>【通讯作者】*</a:focus>
-	              <br>
-	              <a href="#">论文链接</a>
-	              /
-	              <a href="#">代码</a>
-	              /
-	              <a href="#">项目主页</a>
-	              <br>
-	              <em><strong>【会议 / 期刊名称 年份】</strong></em>
-	              <p></p>
-	              <p>
-	              【一句话介绍：这篇论文解决了什么问题、用了什么方法、取得了什么结果。】
-	              </p>
 	            </td>
 	          </tr>
-
-	          <tr style="background-color: lightyellow;" data-tags="medical,benchmark">
-	            <td style="padding:20px;width:30%;vertical-align:middle">
-	              <div class="one">
-	                <div class="two" id="pub2_image">
-	                  <br>
-	                  <img src="images/paper/medgen.png" width="190" alt="【论文二配图】">
-	                </div>
-	                <br>
-	                <img src="images/paper/medgen.png" width="190" alt="【论文二配图】">
-	              </div>
-	              <script type="text/javascript">
-	                function pub2_start() {
-	                  document.getElementById('pub2_image').style.opacity = "1";
-	                }
-	                function pub2_stop() {
-	                  document.getElementById('pub2_image').style.opacity = "0";
-	                }
-	                pub2_stop()
-	              </script>
-	            </td>
-	            <td style="padding:20px;width:70%;vertical-align:middle">
-	              <a href="#">
-	                <papertitle>【论文标题二（带浅黄底色，代表代表性工作）】</papertitle>
-	              </a>
-	              <br>
-	              <a:focus><strong>【你的姓名】</strong>†</a:focus>,
-	              <a:focus>【共同一作】†</a:focus>,
-	              <a:focus>【通讯作者】*</a:focus>
-	              <br>
-	              <a href="#">论文链接</a>
-	              /
-	              <a href="#">代码</a>
-	              <br>
-	              <span style="color: red;"><em><strong>【会议 / 期刊名称 年份】</strong></em></span>
-	              <p></p>
-	              <p>
-	              【一句话介绍这篇工作。】
-	              </p>
-	            </td>
-	          </tr>
-
-
-
-	        </tbody></table>
+	          </tbody></table>
 	        <script>
 	          (function() {
 	            var rows = document.querySelectorAll('.publications-table tr[data-tags]');
@@ -490,7 +399,12 @@
               <p>🚀 边做边开源，一起成长。</p>
               <td style="padding:0px;width:100%;vertical-align:middle">
                 <div id="tagcloud-container">
-                    <p style="text-align:center; color:#999; padding-top: 180px;">正在加载项目…</p>
+                    <div class="wip-card">
+                      <div class="wip-icon">🌱</div>
+                      <div class="wip-title">项目正在孵化中</div>
+                      <div class="wip-text">还没有公开的项目，正在酝酿第一个。<br>想知道我在折腾什么，可以先去 <a href="https://github.com/cugxxspotato" target="_blank" rel="noopener">GitHub</a> 看看。</div>
+                      <div class="wip-bar"><span></span></div>
+                    </div>
                 </div>
               </td>
             </tr>
@@ -502,9 +416,8 @@
                 // Custom project list
                 // ↓↓↓ 在这里填你的项目：name 项目名，html_url 链接，stargazers_count 星标数
                 const myProjects = [
-                    { name: "【项目一】", html_url: "#", stargazers_count: 0 },
-                    { name: "【项目二】", html_url: "#", stargazers_count: 0 },
-                    { name: "【项目三】", html_url: "#", stargazers_count: 0 }
+                    // 有项目时按这个格式加进来，上面的「建设中」卡片会自动换成 3D 旋转标签云：
+                    // { name: "项目名", html_url: "https://github.com/...", stargazers_count: 12 }
                 ];
 
                 function initTagCloud(projects) {
@@ -613,6 +526,8 @@
                 }
 
                 function loadProjects() {
+                    // 没有项目时不调用标签云，保留 HTML 里的「建设中」卡片
+                    if (myProjects.length === 0) return;
                     initTagCloud(myProjects);
                 }
 
@@ -620,21 +535,7 @@
             })();
         </script>
 
-        <table id="service" class="page-section" style="width:90%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-          <tr>
-            <br>
-            <heading>学术服务与教学</heading>
-            <br><br>
-          <td style="padding:0px;width:100%;vertical-align:middle">
-            <p>
-              <li>审稿人：【期刊 / 会议名称】，【年份】</li>
-              <li>助教：【课程名称】，【学期】</li>
-            </p>
-          </td>
-        </tr>
-        </tbody></table>
-
-        <table id="awards" class="page-section" style="width:90%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+<table id="awards" class="page-section" style="width:90%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
               <tr>
                 <br>
                 <heading>荣誉与奖励</heading>
@@ -642,10 +543,7 @@
                 <br>
               <td style="padding:0px;width:100%;vertical-align:middle">
                 <p>
-                  <li>【年份】：【奖项 / 奖学金名称】</li>
-                </p>
-				<p>
-                  <li>【年份】：【奖项 / 奖学金名称】</li>
+                  <li>2024 年：荣获国家奖学金</li>
                 </p>
               </td>
             </tr>
