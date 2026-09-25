@@ -1090,3 +1090,27 @@ span.highlight {
   margin: 0;
   width: min(460px, 88%);
 }
+
+/* ============================================================
+   毛体（毛草）书法字体 —— 页脚格言
+   「雄关漫道真如铁，而今迈步从头越。」
+   只用 Google Fonts 的 text= 子集接口抽了这 16 个字，自托管 5.6KB，
+   不依赖 Google 的 CDN，国内可直接加载，也不影响首屏。
+   字体：Liu Jian Mao Cao（柳建毛草），SIL Open Font License 1.1
+   ============================================================ */
+@font-face {
+  font-family: 'MaoCao';
+  src: url('fonts/maocao-subset.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+.mountain-content .mountain-sub.mao-quote {
+  /* 后面的行楷/楷体是字体没加载出来时的兜底，保证字形仍是书法体而不是黑体 */
+  font-family: 'MaoCao', 'STXingkai', '华文行楷', 'KaiTi', '楷体', cursive;
+  font-size: clamp(24px, 3vw, 34px);
+  line-height: 1.65;
+  letter-spacing: 3px;
+  font-weight: 400;
+}
