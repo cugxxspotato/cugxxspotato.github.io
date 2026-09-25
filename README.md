@@ -45,19 +45,27 @@ npx --yes serve . -l 8080
 
 ## 部署
 
-本地仓库已初始化并完成首次提交，remote 已指向：
+**已上线：<https://cugxxspotato.github.io/>**
+
+仓库 <https://github.com/cugxxspotato/cugxxspotato.github.io>（Public），`main` 分支，
+GitHub Pages 已开启并构建成功（user site，自动启用）。
+
+remote 已配置：
 
 ```
 https://github.com/cugxxspotato/cugxxspotato.github.io.git
 ```
 
-还差两步（详见 [填写指南.md](填写指南.md) 第四节）：
+以后改完内容直接推：
 
-1. 在 <https://github.com/new> 创建 **Public** 仓库，名字必须是 `cugxxspotato.github.io`；
-2. `git push -u origin main`，然后在 **Settings → Pages** 把 Source 设为
-   `Deploy from a branch`，分支 `main`、目录 `/ (root)`。
+```bash
+git add .
+git commit -m "update: 更新内容"
+git push
+```
 
-网址将是 <https://cugxxspotato.github.io>。
+推送后 Pages 会自动重新构建，约 1 分钟内生效。
+细节（含本机 git 代理配置）见 [填写指南.md](填写指南.md) 第四节。
 
 ## 说明
 
