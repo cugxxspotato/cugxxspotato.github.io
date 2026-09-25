@@ -8,3 +8,6 @@ desktop.ini
 # 本地预览脚本
 _preview*.mjs
 _localize*.mjs
+
+# 未使用的备选头像（2.5MB，体积大，不纳入仓库；文件仍在本地磁盘上）
+images/avatar/二次元.png
